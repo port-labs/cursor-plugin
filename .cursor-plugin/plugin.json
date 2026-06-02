@@ -1,0 +1,26 @@
+{
+  "name": "port-mcp",
+  "displayName": "Port MCP",
+  "description": "Query and act on your Port IDP directly from Cursor. Scaffold services, run self-service actions, inspect the software catalog, manage scorecards, and trigger day-2 operations — all through natural language.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Port",
+    "email": "support@port.io",
+    "url": "https://port.io"
+  },
+  "homepage": "https://docs.port.io",
+  "repository": "https://github.com/port-labs/cursor-plugin",
+  "license": "MIT",
+  "keywords": [
+    "platform-engineering",
+    "developer-portal",
+    "idp",
+    "self-service",
+    "software-catalog",
+    "devops",
+    "mcp"
+  ],
+  "icon": "./assets/icon.png",
+  "skills": "./skills/",
+  "mcpServers": "./mcp.json"
+}
