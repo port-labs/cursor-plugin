@@ -4,14 +4,17 @@ description: >
   Create or update a Port scorecard to measure service maturity, production readiness,
   security compliance, or any custom standard. Use when the user wants to define
   quality gates, evaluate their catalog against rules, or check scorecard status.
-triggers:
-  - user mentions scorecard, maturity, production readiness, compliance score
-  - user wants to grade or evaluate services
-  - user wants to enforce standards across their catalog
-alwaysApply: false
 ---
 
 # Port Scorecards
+
+Create or update Port scorecards to measure service quality and enforce engineering standards.
+
+## When to use
+
+- User mentions scorecards, maturity, production readiness, or compliance scoring
+- User wants to grade or evaluate services
+- User wants to enforce standards across the catalog
 
 ## Check existing scorecards
 Call `list_scorecards` to show the user what already exists.

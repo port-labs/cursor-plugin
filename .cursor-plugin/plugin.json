@@ -20,7 +20,7 @@
     "devops",
     "mcp"
   ],
-  "icon": "./assets/icon.png",
+  "logo": "./assets/icon.png",
   "skills": "./skills/",
   "mcpServers": "./mcp.json"
 }

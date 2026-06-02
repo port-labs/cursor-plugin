@@ -1,19 +1,21 @@
 ---
 name: query-catalog
 description: >
-  Search and inspect Port's software catalog. Use when the user asks about services,
-  teams, environments, dependencies, ownership, or any entity tracked in Port.
-  Also use when answering questions that require catalog context before writing code.
-triggers:
-  - user asks "who owns X"
-  - user asks about a service, library, environment, cluster, or resource
-  - user wants to find related services or dependencies
-  - user asks about team ownership or on-call contacts
-  - user needs catalog context to complete a coding task
-alwaysApply: false
+  Search and inspect Port's software catalog across services, teams, environments,
+  dependencies, and ownership metadata.
 ---
 
 # Query the Port Software Catalog
+
+Answer catalog and ownership questions by retrieving accurate Port entity context.
+
+## When to use
+
+- User asks who owns a service or resource
+- User asks about a service, library, environment, cluster, or infrastructure entity
+- User wants dependency or relationship context between entities
+- User asks for team ownership or on-call contact context
+- User needs catalog context before implementing code changes
 
 Use Port MCP catalog tools to answer the user's question:
 

@@ -4,15 +4,18 @@ description: >
   Help the user respond to production incidents using Port. Find the affected service,
   look up the on-call team, trigger incident response actions (page on-call, create
   incident ticket, run rollback), and surface runbooks — all without leaving Cursor.
-triggers:
-  - user mentions an incident, outage, alert, or production issue
-  - user wants to page someone or escalate
-  - user wants to rollback a deployment
-  - user says "who's on call for X"
-alwaysApply: false
 ---
 
 # Incident Response with Port
+
+Coordinate rapid incident triage, escalation, and recovery actions through Port.
+
+## When to use
+
+- User mentions an incident, outage, alert, or production issue
+- User wants to page someone or escalate
+- User wants to rollback a deployment
+- User asks who is on-call for a service
 
 1. **Identify the service**: resolve the service name to a Port entity.
 

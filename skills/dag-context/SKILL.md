@@ -5,14 +5,17 @@ description: >
   fetch its Port catalog entry to inject ownership, dependencies, SLOs, runbooks,
   and environment details as context. Makes coding assistance more accurate and
   context-aware.
-triggers:
-  - user is working on a specific named service and wants code help
-  - user asks to review or modify a service that exists in Port
-  - user debugging issue in a service — enrich with catalog data
-alwaysApply: false
 ---
 
 # Inject Port Catalog Context for Coding Tasks
+
+Enrich coding help with Port ownership, dependency, and runtime context for the target service.
+
+## When to use
+
+- User is working on a specific named service and wants code help
+- User asks to review or modify a service that exists in Port
+- User is debugging an issue in a service and needs catalog context
 
 When the user names a service (e.g. "help me fix a bug in payments-api"):
 

@@ -2,16 +2,17 @@
 name: scaffold-service
 description: >
   Scaffold a new microservice, library, or component using Port self-service actions.
-  Use when the user wants to create a new service, bootstrap a repo, or provision
-  infrastructure through Port's scaffolding actions.
-triggers:
-  - user wants to create a new service
-  - user says "scaffold", "bootstrap", "new microservice", "new repo"
-  - user wants to run a Port scaffolding action
-alwaysApply: false
 ---
 
 # Scaffold a Service via Port
+
+Create new services and repositories by running the correct Port scaffolding action.
+
+## When to use
+
+- User wants to create a new service
+- User asks to scaffold, bootstrap, or create a new microservice or repo
+- User wants to run a Port scaffolding action
 
 1. Use the Port MCP to list available scaffolding actions:
    - Call `list_actions` to return all actions.
