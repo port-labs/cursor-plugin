@@ -44,7 +44,7 @@ A set of purpose-built skills that make common developer portal workflows fast a
 ### From the Cursor Marketplace
 
 1. Open Cursor Settings → **Plugins**
-2. Search for **Port**
+2. Search for **Port MCP**
 3. Click **Install**
 
 The plugin will configure the Port MCP server and load all skills automatically.
@@ -54,7 +54,7 @@ The plugin will configure the Port MCP server and load all skills automatically.
 In Cursor Settings → Plugins, paste:
 
 ```
-port-labs/port-cursor-plugin
+port-cursor-plugin
 ```
 
 ---
