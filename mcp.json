@@ -5,13 +5,12 @@
       "headers": {
         "x-read-only-mode": "0"
       }
+    },
+    "port-us": {
+      "url": "https://mcp.us.port.io/v1", // US data center
+      "headers": {
+        "x-read-only-mode": "0"
+      }
     }
-    // Uncomment this to use the US data center
-    // "port-us": {
-    //   "url": "https://mcp.us.port.io/v1", // US data center
-    //   "headers": {
-    //     "x-read-only-mode": "0"
-    //   }
-    // }
   }
 }
