@@ -1,6 +1,6 @@
 # Port Plugin for Cursor
 
-Use your [Port Internal Developer Portal](https://port.io) directly from Cursor through a pre-configured Port MCP server. Scaffold services, run self-service actions, query the software catalog, manage scorecards, and trigger day-2 operations — all through natural language, without leaving your IDE.
+Use your [Port Internal Developer Portal](https://port.io) directly from Cursor through a pre-configured Port MCP server. Query the software catalog, run self-service actions, manage scorecards, and trigger day-2 operations — all through natural language, without leaving your IDE.
 
 ---
 
@@ -8,13 +8,15 @@ Use your [Port Internal Developer Portal](https://port.io) directly from Cursor 
 
 ### Port MCP Server
 
-Cursor automatically connects to Port's remote MCP server at `https://mcp.port.io/v1` (EU data center) or `https://mcp.us.port.io/v1`(US data center), giving the AI agent direct access to your portal's tools:
+Cursor connects to Port's remote MCP server at `https://mcp.port.io/v1` (EU data center) by default, giving the AI agent direct access to your portal's tools:
 
 - Search and query catalog entities
 - Read blueprints and their schemas
 - Run self-service actions and poll their status
 - Manage scorecards and check compliance results
 - Create and update entities
+
+If your account is in the US data center, update `mcp.json` and replace the server URL with `https://mcp.us.port.io/v1`.
 
 ## Requirements
 
@@ -38,7 +40,7 @@ The plugin will configure the Port MCP server automatically.
 In Cursor Settings → Plugins, paste:
 
 ```
-port-cursor-plugin
+port-mcp
 ```
 
 ---
@@ -46,6 +48,8 @@ port-cursor-plugin
 ## Authentication
 
 The Port MCP server uses OAuth. On first use you'll be prompted to authenticate with your Port account in the browser. Once authenticated, your session is stored securely in Cursor — no credentials are sent to the AI model.
+
+By default, `mcp.json` sets `x-read-only-mode` to `"0"` (write-enabled). If you want read-only access, change this header value to `"1"` before connecting.
 
 If you'd prefer API key authentication, set the following environment variables before starting Cursor:
 
@@ -112,10 +116,10 @@ port-cursor-plugin/
 ├── .cursor-plugin/
 │   └── plugin.json          # Cursor plugin manifest
 ├── assets/
-│   └── icon.png
+│   ├── icon.png
+│   └── icon.svg
 ├── mcp.json                 # MCP server configuration
 ├── README.md
-├── CHANGELOG.md
 └── LICENSE
 ```
 
