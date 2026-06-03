@@ -1,22 +1,62 @@
 # Port Plugin for Cursor
 
-Use your [Port Internal Developer Portal](https://port.io) directly from Cursor through a pre-configured Port MCP server. Query the software catalog, run self-service actions, manage scorecards, and trigger day-2 operations — all through natural language, without leaving your IDE.
+Give Cursor's AI agent a complete picture of your engineering world.
+
+Port is your engineering system of record, the single source of truth for every service, team, dependency, deployment, and standard across your organization. This plugin connects Cursor directly to your Port Internal Developer Portal via MCP, so the AI agent understands not just your code, but the full context around it: who owns what, what's running where, what's compliant, and what actions are available to take.
 
 ---
 
-## What's included
+## Why this matters
 
-### Port MCP Server
+Cursor is exceptional at reading and writing code. But the hardest problems in software engineering aren't just about code. They're about context. Who owns this service? What depends on it? Is it production-ready? Who's on call if something breaks?
 
-Cursor connects to Port's remote MCP server at `https://mcp.port.io/v1` (EU data center) by default, giving the AI agent direct access to your portal's tools:
+Port answers those questions. By connecting Cursor to Port, your AI agent can reason across your entire engineering system and take meaningful action. Not just suggest a fix, but scaffold a service, trigger a deployment, check a scorecard, or page the right team.
 
-- Search and query catalog entities
-- Read blueprints and their schemas
-- Run self-service actions and poll their status
-- Manage scorecards and check compliance results
-- Create and update entities
+---
 
-If your account is in the US data center, update `mcp.json` and replace the server URL with `https://mcp.us.port.io/v1`.
+## What Port brings to Cursor
+
+**Your software catalog, queryable in plain English**
+
+Port's catalog maps every service, resource, team, and dependency in your organization. Ask Cursor anything:
+
+```
+Who owns the payments service?
+What services depend on auth-api?
+Show me everything the platform team is responsible for
+```
+
+**Self-service actions, triggered from your IDE**
+
+Port's self-service layer exposes day-2 operations as governed, repeatable actions. Cursor can trigger them naturally:
+
+```
+Scaffold a new Python microservice called inventory-api
+Deploy the payments service to production
+Provision a new PostgreSQL database for the billing team
+```
+
+**Scorecards and compliance, surfaced in context**
+
+Port's scorecards define and measure production readiness, security standards, and operational maturity across every service. Cursor can check compliance before you ship:
+
+```
+What's the production readiness score for my services?
+Which services are failing the security compliance scorecard?
+Show me all services at Bronze level
+```
+
+**Incident response with full organizational context**
+
+When something breaks, Cursor can pull the full picture from Port (ownership, runbooks, on-call rotations) and take action:
+
+```
+We have an outage in payments - who's on call?
+Page the platform team and open a PagerDuty incident
+Show me the runbook for auth-service
+```
+
+---
 
 ## Requirements
 
@@ -33,38 +73,40 @@ If your account is in the US data center, update `mcp.json` and replace the serv
 2. Search for **Port MCP**
 3. Click **Install**
 
-The plugin will configure the Port MCP server automatically.
+The plugin configures the Port MCP server automatically.
 
 ### Install from this repository
 
 In Cursor Settings → Plugins, paste:
 
 ```
-port-mcp
+port
 ```
 
 ---
 
 ## Authentication
 
-The Port MCP server uses OAuth. On first use you'll be prompted to authenticate with your Port account in the browser. Once authenticated, your session is stored securely in Cursor — no credentials are sent to the AI model.
+Port MCP uses OAuth. On first use you'll be prompted to authenticate with your Port account in the browser. Once authenticated, your session is stored securely in Cursor, and no credentials are passed to the AI model.
 
-By default, `mcp.json` sets `x-read-only-mode` to `"0"` (write-enabled). If you want read-only access, change this header value to `"1"` before connecting.
+By default, `mcp.json` sets `x-read-only-mode` to `"0"` (write-enabled). To restrict to read-only access, set this value to `"1"` before connecting.
 
-If you'd prefer API key authentication, set the following environment variables before starting Cursor:
+For API key authentication, set these environment variables before starting Cursor:
 
 ```bash
 PORT_CLIENT_ID=your-client-id
 PORT_CLIENT_SECRET=your-client-secret
 ```
 
-You can find your credentials at [app.getport.io/settings/credentials](https://app.getport.io/settings/credentials).
+Find your credentials at [app.getport.io/settings/credentials](https://app.getport.io/settings/credentials).
+
+**US data center?** Update `mcp.json` and replace the default server URL with `https://mcp.us.port.io/v1`.
 
 ---
 
 ## Usage
 
-Once connected, ask the agent anything about your Port portal or trigger actions naturally:
+Once connected, ask the agent anything about your Port portal or trigger actions naturally.
 
 **Catalog queries**
 ```
@@ -89,7 +131,7 @@ Provision a new PostgreSQL database for the billing team
 
 **Incident response**
 ```
-We have an outage in payments — who's on call?
+We have an outage in payments - who's on call?
 Page the platform team and open a PagerDuty incident
 Show me the runbook for auth-service
 ```
@@ -103,12 +145,6 @@ Show me all Bronze-level services
 
 ---
 
-## Having trouble connecting?
-
-If authentication did not complete, ask the agent to verify your Port MCP connection and retry OAuth.
-
----
-
 ## Repository structure
 
 ```
@@ -118,6 +154,8 @@ port-cursor-plugin/
 ├── assets/
 │   ├── icon.png
 │   └── icon.svg
+├── rules/
+│   └── port-safety.mdc      # Always-active safety rules for Port MCP
 ├── mcp.json                 # MCP server configuration
 ├── README.md
 └── LICENSE
@@ -127,10 +165,10 @@ port-cursor-plugin/
 
 ## Support
 
-- [Port Documentation](https://docs.getport.io)
-- [Port MCP Server docs](https://docs.getport.io/mcp)
+- [Port Documentation](https://docs.port.io)
+- [Port MCP Server docs](https://docs.port.io/ai-interfaces/port-mcp-server/available-tools)
 - [support@getport.io](mailto:support@getport.io)
 
 ## License
 
-MIT — see [LICENSE](./LICENSE) for details.
+MIT. See [LICENSE](./LICENSE) for details.
