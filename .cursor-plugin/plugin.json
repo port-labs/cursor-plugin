@@ -21,5 +21,6 @@
     "mcp"
   ],
   "logo": "../assets/icon.svg",
-  "mcpServers": "../mcp.json"
+  "mcpServers": "../mcp.json",
+  "commands": "../commands/"
 }

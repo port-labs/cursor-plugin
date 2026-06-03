@@ -85,6 +85,43 @@ port
 
 ---
 
+## Quick setup
+
+After installing, run `/setup-region` in the Cursor agent. It will ask which region your Port account is on and update the MCP server URL for you automatically.
+
+---
+
+## Data center selection
+
+Port runs in two regions. You need to point the MCP server at the one your organization is on, or authentication will fail.
+
+| Region | MCP server URL |
+|--------|----------------|
+| EU (default) | `https://mcp.port.io/v1` |
+| US | `https://mcp.us.port.io/v1` |
+
+**How to tell which region you're on:**
+- Log in to Port and check your browser's address bar
+- EU accounts use `app.getport.io`
+- US accounts use `app.us.getport.io`
+
+To switch regions, open `mcp.json` and update the `url` field:
+
+```json
+{
+  "mcpServers": {
+    "port": {
+      "url": "https://mcp.us.port.io/v1",
+      "headers": {
+        "x-read-only-mode": "0"
+      }
+    }
+  }
+}
+```
+
+---
+
 ## Authentication
 
 Port MCP uses OAuth. On first use you'll be prompted to authenticate with your Port account in the browser. Once authenticated, your session is stored securely in Cursor, and no credentials are passed to the AI model.
@@ -99,8 +136,6 @@ PORT_CLIENT_SECRET=your-client-secret
 ```
 
 Find your credentials at [app.getport.io/settings/credentials](https://app.getport.io/settings/credentials).
-
-**US data center?** Update `mcp.json` and replace the default server URL with `https://mcp.us.port.io/v1`.
 
 ---
 
