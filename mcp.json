@@ -1,13 +1,13 @@
 {
   "mcpServers": {
     "port-eu": {
-      "url": "https://mcp.port.io/v1", // EU data center
+      "url": "https://mcp.port.io/v1",
       "headers": {
         "x-read-only-mode": "0"
       }
     },
     "port-us": {
-      "url": "https://mcp.us.port.io/v1", // US data center
+      "url": "https://mcp.us.port.io/v1",
       "headers": {
         "x-read-only-mode": "0"
       }
