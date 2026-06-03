@@ -1,6 +1,6 @@
 # Port Plugin for Cursor
 
-Use your [Port Internal Developer Portal](https://port.io) directly from Cursor through a pre-configured Port MCP server and a suite of AI skills. Scaffold services, run self-service actions, query the software catalog, manage scorecards, and trigger day-2 operations — all through natural language, without leaving your IDE.
+Use your [Port Internal Developer Portal](https://port.io) directly from Cursor through a pre-configured Port MCP server. Scaffold services, run self-service actions, query the software catalog, manage scorecards, and trigger day-2 operations — all through natural language, without leaving your IDE.
 
 ---
 
@@ -15,22 +15,6 @@ Cursor automatically connects to Port's remote MCP server at `https://mcp.port.i
 - Run self-service actions and poll their status
 - Manage scorecards and check compliance results
 - Create and update entities
-
-### Port AI Skills
-
-A set of purpose-built skills that make common developer portal workflows fast and natural in Agent mode:
-
-| Skill | Description |
-|---|---|
-| `port-setup` | First-time setup and authentication — guides you through connecting to Port |
-| `scaffold-service` | Scaffold a new service, library, or component using Port self-service actions |
-| `query-catalog` | Search and inspect the software catalog — ownership, dependencies, environments |
-| `create-scorecard` | Create or check scorecards for service maturity and production readiness |
-| `dag-context` | Automatically injects catalog context (owner, stack, deps, runbook) before coding |
-| `incident-response` | Surface on-call contacts and trigger incident actions without leaving Cursor |
-| `day2-ops` | Scale services, rotate secrets, provision resources, and manage access |
-
----
 
 ## Requirements
 
@@ -47,7 +31,7 @@ A set of purpose-built skills that make common developer portal workflows fast a
 2. Search for **Port MCP**
 3. Click **Install**
 
-The plugin will configure the Port MCP server and load all skills automatically.
+The plugin will configure the Port MCP server automatically.
 
 ### Install from this repository
 
@@ -117,7 +101,7 @@ Show me all Bronze-level services
 
 ## Having trouble connecting?
 
-Ask the agent: `"Set up Port"` — the `port-setup` skill will walk you through configuring the MCP server and verifying your connection step by step.
+If authentication did not complete, ask the agent to verify your Port MCP connection and retry OAuth.
 
 ---
 
@@ -127,14 +111,6 @@ Ask the agent: `"Set up Port"` — the `port-setup` skill will walk you through 
 port-cursor-plugin/
 ├── .cursor-plugin/
 │   └── plugin.json          # Cursor plugin manifest
-├── skills/
-│   ├── port-setup/
-│   ├── scaffold-service/
-│   ├── query-catalog/
-│   ├── create-scorecard/
-│   ├── dag-context/
-│   ├── incident-response/
-│   └── day2-ops/
 ├── assets/
 │   └── icon.png
 ├── mcp.json                 # MCP server configuration
