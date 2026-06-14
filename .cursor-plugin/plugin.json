@@ -20,7 +20,5 @@
     "devops",
     "mcp"
   ],
-  "logo": "../assets/icon.svg",
-  "mcpServers": "../mcp.json",
-  "commands": "../commands/"
+  "logo": "assets/icon.svg"
 }
