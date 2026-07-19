@@ -1,5 +1,9 @@
 # Port Plugin for Cursor
 
+> **ℹ️ This repository has been archived.** The Cursor plugin is now maintained as part of the [port-labs/port-skills](https://github.com/port-labs/port-skills) repository, which provides a unified distribution of Port plugins and skills for all AI coding agents. Please refer to that repository for the latest updates, features, and installation instructions.
+
+---
+
 Give Cursor's AI agent a complete picture of your engineering world.
 
 Port is your engineering system of record, the single source of truth for every service, team, dependency, deployment, and standard across your organization. This plugin connects Cursor directly to your Port Internal Developer Portal via MCP, so the AI agent understands not just your code, but the full context around it: who owns what, what's running where, what's compliant, and what actions are available to take.
